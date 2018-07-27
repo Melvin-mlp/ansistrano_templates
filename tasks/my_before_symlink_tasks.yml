@@ -1,0 +1,8 @@
+---
+- name: "CUSTOM TASK | BEFORE SYMLINK | Doctrine migrations"
+  shell: chdir={{ansistrano_release_path.stdout}}
+    SYMFONY_ENV={{symfony_env}} APP_ENV={{symfony_env}} {{symfony_php_path}} {{symfony_console_path}} doctrine:migrations:migrate --no-interaction {{symfony_doctrine_options}}
+  when: >
+    (groups['staging'] is defined and groups['staging'][0] == inventory_hostname)
+    or
+    (groups['production'] is defined and groups['production'][0] == inventory_hostname)

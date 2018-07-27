@@ -1,0 +1,10 @@
+[production]
+server1 ansible_port=SSH_PORT
+server2 ansible_port=SSH_PORT
+
+[production:vars]
+ansible_user="SSH_USER"
+ansible_host="JUMPBOX_IP/DOMAIN"
+ansible_ssh_common_args="-o StrictHostKeyChecking=no -o ForwardAgent=yes"
+ansistrano_git_branch="GIT_BRANCH_TO_DEPLOY"
+ansistrano_deploy_to="DEPLOYMENT_PATH"

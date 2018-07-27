@@ -1,0 +1,6 @@
+---
+- name: "CUSTOM TASK | BEFORE COMPOSER INSTALL | Install bower"
+  shell: bower install --allow-root --verbose
+  args:
+    chdir: "{{ ansistrano_release_path.stdout }}"
+  when: install_bower|bool == true

@@ -1,0 +1,10 @@
+[staging]
+server1 ansible_host="IP/DOMAIN"
+server2 ansible_host="IP/DOMAIN"
+
+[staging:vars]
+ansible_user="SSH_USER"
+ansible_port=SSH_PORT
+ansible_ssh_common_args="-o StrictHostKeyChecking=no -o ForwardAgent=yes"
+ansistrano_git_branch="GIT_BRANCH_TO_DEPLOY"
+ansistrano_deploy_to="DEPLOYMENT_PATH"
